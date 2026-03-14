@@ -6,11 +6,11 @@ for /f "usebackq tokens=3" %%A in (`reg query "HKLM\SYSTEM\CurrentControlSet\Con
 
 :: If current is 3, we assume mitigations are disabled → enable them (set to 0)
 :: If current is 0 or missing, we assume mitigations are enabled → disable them (set to 3)
-if "%current%"=="0" (
+if "%current%"=="0x0" (
     echo Disabling CPU mitigations...
     echo your officially an asshole.
     set newValue=3
-) else if "%current%"=="3" (
+) else if "%current%"=="0x3" (
     echo Enabling CPU mitigations...
     set newValue=0
 ) else (
