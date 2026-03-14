@@ -21,5 +21,4 @@ if "%current%"=="0x0" (
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v FeatureSettingsOverride /t REG_DWORD /d %newValue% /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v FeatureSettingsOverrideMask /t REG_DWORD /d %newValue% /f
 
-echo Done. You may need to restart your PC for changes to take effect.
 pause
